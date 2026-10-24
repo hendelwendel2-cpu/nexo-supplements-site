@@ -32,10 +32,10 @@ h1{font-size:clamp(36px,6vw,64px);line-height:1.05;margin:12px 0 18px;letter-spa
 /* Cards com fotos reais de produto no lugar dos ícones */
 .grid{grid-template-columns:1fr;gap:18px;max-width:980px;margin:0 auto}
 .card{padding:0;display:grid;grid-template-columns:minmax(220px,40%) minmax(0,1fr);align-items:stretch;overflow:hidden;min-height:260px;border-color:#00ff6680;background:linear-gradient(110deg,#071007,#0c100c)}
-.product-photo{width:100%;height:100%;min-height:260px;max-height:320px;object-fit:cover;display:block;background:#050805;border-right:1px solid #00ff6655}
+.product-photo{width:100%;height:100%;min-height:260px;max-height:none;object-fit:contain;object-position:center;display:block;background:#050805;border-right:1px solid #00ff6655}
 .card-content{padding:22px 26px;display:flex;flex-direction:column;align-items:flex-start;min-width:0}
 .card .iconbox{display:none}.card h3{font-size:clamp(22px,3vw,30px);margin:0 0 8px}.card .desc{font-size:15px}.card .price{color:var(--g);margin:10px 0 0;font-size:clamp(27px,3.5vw,36px)}.card .note{margin-bottom:8px}.card .btn{margin-top:auto;max-width:100%}
-@media(max-width:560px){.grid{grid-template-columns:1fr}.card{grid-template-columns:1fr;min-height:0}.product-photo{height:220px;min-height:0;max-height:260px;border-right:0;border-bottom:1px solid #00ff6655}.card-content{padding:20px}.card .btn{margin-top:14px}.card .price{font-size:30px}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.grid .card{grid-template-columns:1fr;min-height:0;padding:0}.grid .product-photo{width:100%;height:auto;aspect-ratio:3/4;min-height:0;max-height:none;object-fit:contain;object-position:center;border-right:0;border-bottom:1px solid #00ff6655}.card-content{padding:20px}.card .btn{margin-top:14px}.card .price{font-size:30px}}
 
 .benefits{grid-template-columns:repeat(4,minmax(0,1fr))}.benefit{padding:21px;background:#101510;border-radius:12px;border-left:3px solid var(--g)}
 .benefit b{display:block;color:var(--g);margin-bottom:7px}.benefit p{font-size:13px;color:#b7c0b9}
@@ -46,7 +46,24 @@ th{color:var(--g);font-size:12px;text-transform:uppercase;letter-spacing:1px}tr:
 .cta{text-align:center;padding:70px 0;background:radial-gradient(ellipse at 50% 0%,#10401f,#080b08 70%)}.cta h2{font-size:clamp(30px,4vw,44px);margin:8px 0 12px}.cta p{color:#c5cec7;max-width:620px;margin:0 auto 24px}
 footer{border-top:1px solid #00ff6630;padding:26px 0;color:#9ca69e;font-size:12px}.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 @media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.benefits{grid-template-columns:repeat(2,minmax(0,1fr))}.head{flex-wrap:wrap;padding:12px 0;justify-content:center}}
-@media(max-width:560px){.head{gap:12px}.logo{width:100%;text-align:center}nav{gap:12px;flex-wrap:wrap;justify-content:center}nav a{font-size:11px}.hero{padding:30px 0 46px}.hero img{border-radius:12px}.section{padding:52px 0}.grid,.benefits,.details{grid-template-columns:1fr}.card{padding:22px}th,td{padding:12px 9px;font-size:13px}}
+@media(max-width:560px){.grid .card{padding:0}.head{gap:12px}.logo{width:100%;text-align:center}nav{gap:12px;flex-wrap:wrap;justify-content:center}nav a{font-size:11px}.hero{padding:30px 0 46px}.hero img{border-radius:12px}.section{padding:52px 0}.grid,.benefits,.details{grid-template-columns:1fr}.card{padding:22px}th,td{padding:12px 9px;font-size:13px}}
+
+/* NEXO: show the entire product artwork, centered without cropping */
+.product-photo {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  aspect-ratio: auto !important;
+  margin: 0 auto;
+}
+.card > .product-photo {
+  width: 100%;
+  border-radius: 12px;
+}
+
 </style></head><body>
 <header><div class="container head">
 <a class="logo" href="#inicio">NEXO<span> SUPPLEMENTS</span></a>
@@ -64,7 +81,7 @@ footer{border-top:1px solid #00ff6630;padding:26px 0;color:#9ca69e;font-size:12p
 <section class="section dark" id="produtos"><div class="container">
 <div class="section-head"><div class="eyebrow">Linha NEXO</div><h2>Escolha seu próximo passo</h2><p>Confira os valores e chame a loja pelo WhatsApp para tirar dúvidas ou fazer seu pedido.</p></div>
 <div class="grid">
-<article class="card"><img class="product-photo" src="nitro-bifes.jpg" alt="Produto Nitro Bifes da NEXO Supplements" loading="lazy"><div class="card-content"><div class="iconbox">⚡</div><h3>Nitro Bifes</h3><p class="desc">Consulte a embalagem para conferir ingredientes, orientações e advertências.</p><div class="price">R$ 80,00</div><div class="note">Preço por unidade</div><a class="btn order" data-product="Nitro Bifes" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
+<article class="card"><img class="product-photo" src="nitro-bites.jpg" alt="Produto Nitro Bites da NEXO Supplements" loading="lazy"><div class="card-content"><div class="iconbox">⚡</div><h3>Nitro Bites</h3><p class="desc">Consulte a embalagem para conferir ingredientes, orientações e advertências.</p><div class="price">R$ 80,00</div><div class="note">Preço por unidade</div><a class="btn order" data-product="Nitro Bites" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
 <article class="card"><img class="product-photo" src="deep-sleep.jpg" alt="Produto Deep Sleep da NEXO Supplements" loading="lazy"><div class="card-content"><div class="iconbox">☾</div><h3>Deep Sleep</h3><p class="desc">Confira a composição e as orientações presentes no rótulo do produto.</p><div class="price">R$ 80,00</div><div class="note">Preço por unidade</div><a class="btn order" data-product="Deep Sleep" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
 <article class="card"><img class="product-photo" src="kit-nexo.jpg" alt="Produto Kit NEXO da NEXO Supplements" loading="lazy"><div class="card-content"><div class="iconbox">✦</div><h3>Kit NEXO</h3><p class="desc">Kit com os dois produtos apresentados na imagem. Consulte a disponibilidade.</p><div class="price">R$ 155,00</div><div class="note">Kit com 2 produtos</div><a class="btn order" data-product="Kit NEXO" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
 <article class="card"><img class="product-photo" src="whey-protein.jpg" alt="Produto NEXO Whey Protein da NEXO Supplements" loading="lazy"><div class="card-content"><div class="iconbox">◈</div><h3>NEXO Whey Protein</h3><p class="desc">Proteína em pó. Confira sabor, peso, ingredientes e tabela nutricional na embalagem.</p><div class="price">R$ 99,90</div><div class="note">Preço sugerido · confirme estoque e custo</div><a class="btn order" data-product="NEXO Whey Protein" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
@@ -84,7 +101,7 @@ footer{border-top:1px solid #00ff6630;padding:26px 0;color:#9ca69e;font-size:12p
 <section class="section dark" id="precos"><div class="container">
 <div class="section-head"><div class="eyebrow">Investimento</div><h2>Preços dos produtos</h2><p>Confirme disponibilidade e condições de entrega antes de concluir o pedido.</p></div>
 <table><thead><tr><th>Produto</th><th>Formato</th><th>Preço</th></tr></thead><tbody>
-<tr><td>Nitro Bifes</td><td>Unidade</td><td>R$ 80,00</td></tr>
+<tr><td>Nitro Bites</td><td>Unidade</td><td>R$ 80,00</td></tr>
 <tr><td>Deep Sleep</td><td>Unidade</td><td>R$ 80,00</td></tr>
 <tr><td>Kit NEXO</td><td>Kit com 2 produtos</td><td>R$ 155,00</td></tr>
 <tr><td>NEXO Whey Protein</td><td>Unidade</td><td>R$ 99,90*</td></tr>
