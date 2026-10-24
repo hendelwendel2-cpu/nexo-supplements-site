@@ -28,6 +28,15 @@ h1{font-size:clamp(36px,6vw,64px);line-height:1.05;margin:12px 0 18px;letter-spa
 .iconbox{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;background:#00ff6615;color:var(--g);font-size:27px;border:1px solid #00ff6644}
 .card h3{font-size:23px;color:var(--g);margin:17px 0 8px}.desc{color:#c1c9c2;font-size:14px;flex:1}
 .price{font-size:30px;font-weight:950;margin:17px 0 2px}.note{font-size:12px;color:#8e9a90;margin-bottom:14px}.card .btn{border-radius:10px;width:100%;margin-top:8px}
+
+/* Cards com fotos reais de produto no lugar dos ícones */
+.grid{grid-template-columns:1fr;gap:18px;max-width:980px;margin:0 auto}
+.card{padding:0;display:grid;grid-template-columns:minmax(220px,40%) minmax(0,1fr);align-items:stretch;overflow:hidden;min-height:260px;border-color:#00ff6680;background:linear-gradient(110deg,#071007,#0c100c)}
+.product-photo{width:100%;height:100%;min-height:260px;max-height:320px;object-fit:cover;display:block;background:#050805;border-right:1px solid #00ff6655}
+.card-content{padding:22px 26px;display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.card .iconbox{display:none}.card h3{font-size:clamp(22px,3vw,30px);margin:0 0 8px}.card .desc{font-size:15px}.card .price{color:var(--g);margin:10px 0 0;font-size:clamp(27px,3.5vw,36px)}.card .note{margin-bottom:8px}.card .btn{margin-top:auto;max-width:100%}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.card{grid-template-columns:1fr;min-height:0}.product-photo{height:220px;min-height:0;max-height:260px;border-right:0;border-bottom:1px solid #00ff6655}.card-content{padding:20px}.card .btn{margin-top:14px}.card .price{font-size:30px}}
+
 .benefits{grid-template-columns:repeat(4,minmax(0,1fr))}.benefit{padding:21px;background:#101510;border-radius:12px;border-left:3px solid var(--g)}
 .benefit b{display:block;color:var(--g);margin-bottom:7px}.benefit p{font-size:13px;color:#b7c0b9}
 table{width:100%;border-collapse:collapse;background:#101410;border-radius:14px;overflow:hidden}th,td{padding:16px 19px;text-align:left;border-bottom:1px solid #ffffff12}
@@ -55,9 +64,14 @@ footer{border-top:1px solid #00ff6630;padding:26px 0;color:#9ca69e;font-size:12p
 <section class="section dark" id="produtos"><div class="container">
 <div class="section-head"><div class="eyebrow">Linha NEXO</div><h2>Escolha seu próximo passo</h2><p>Confira os valores e chame a loja pelo WhatsApp para tirar dúvidas ou fazer seu pedido.</p></div>
 <div class="grid">
-<article class="card"><div class="iconbox">⚡</div><h3>Nitro Bifes</h3><p class="desc">Consulte a embalagem para conferir ingredientes, orientações e advertências.</p><div class="price">R$ 80,00</div><div class="note">Preço por unidade</div><a class="btn order" data-product="Nitro Bifes" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></article>
-<article class="card"><div class="iconbox">☾</div><h3>Deep Sleep</h3><p class="desc">Confira a composição e as orientações presentes no rótulo do produto.</p><div class="price">R$ 80,00</div><div class="note">Preço por unidade</div><a class="btn order" data-product="Deep Sleep" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></article>
-<article class="card"><div class="iconbox">✦</div><h3>Kit NEXO</h3><p class="desc">Kit com os dois produtos apresentados na imagem. Consulte a disponibilidade.</p><div class="price">R$ 155,00</div><div class="note">Kit com 2 produtos</div><a class="btn order" data-product="Kit NEXO" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></article>
+<article class="card"><img class="product-photo" src="nitro-bifes.jpg" alt="Produto Nitro Bifes da NEXO Supplements" loading="lazy"><div class="card-content"><div class="iconbox">⚡</div><h3>Nitro Bifes</h3><p class="desc">Consulte a embalagem para conferir ingredientes, orientações e advertências.</p><div class="price">R$ 80,00</div><div class="note">Preço por unidade</div><a class="btn order" data-product="Nitro Bifes" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
+<article class="card"><img class="product-photo" src="deep-sleep.jpg" alt="Produto Deep Sleep da NEXO Supplements" loading="lazy"><div class="card-content"><div class="iconbox">☾</div><h3>Deep Sleep</h3><p class="desc">Confira a composição e as orientações presentes no rótulo do produto.</p><div class="price">R$ 80,00</div><div class="note">Preço por unidade</div><a class="btn order" data-product="Deep Sleep" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
+<article class="card"><img class="product-photo" src="kit-nexo.jpg" alt="Produto Kit NEXO da NEXO Supplements" loading="lazy"><div class="card-content"><div class="iconbox">✦</div><h3>Kit NEXO</h3><p class="desc">Kit com os dois produtos apresentados na imagem. Consulte a disponibilidade.</p><div class="price">R$ 155,00</div><div class="note">Kit com 2 produtos</div><a class="btn order" data-product="Kit NEXO" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
+<article class="card"><img class="product-photo" src="whey-protein.jpg" alt="Produto NEXO Whey Protein da NEXO Supplements" loading="lazy"><div class="card-content"><div class="iconbox">◈</div><h3>NEXO Whey Protein</h3><p class="desc">Proteína em pó. Confira sabor, peso, ingredientes e tabela nutricional na embalagem.</p><div class="price">R$ 99,90</div><div class="note">Preço sugerido · confirme estoque e custo</div><a class="btn order" data-product="NEXO Whey Protein" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
+<article class="card"><img class="product-photo" src="creatine.jpg" alt="Produto NEXO Creatine da NEXO Supplements" loading="lazy"><div class="card-content"><div class="iconbox">⟡</div><h3>NEXO Creatine</h3><p class="desc">Creatina monohidratada. Apresente no anúncio apenas a composição confirmada no rótulo.</p><div class="price">R$ 69,90</div><div class="note">Preço sugerido · confirme estoque e custo</div><a class="btn order" data-product="NEXO Creatine" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
+<article class="card"><img class="product-photo" src="pre-treino.jpg" alt="Produto NEXO Pré-Treino da NEXO Supplements" loading="lazy"><div class="card-content"><div class="iconbox">ϟ</div><h3>NEXO Pré-Treino</h3><p class="desc">Produto pré-treino. Consulte ingredientes, quantidade de cafeína e advertências do fabricante.</p><div class="price">R$ 79,90</div><div class="note">Preço sugerido · confirme estoque e custo</div><a class="btn order" data-product="NEXO Pré-Treino" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
+<article class="card"><img class="product-photo" src="hydration.jpg" alt="Produto NEXO Hydration da NEXO Supplements" loading="lazy"><div class="card-content"><div class="iconbox">▤</div><h3>NEXO Hydration</h3><p class="desc">Produto para hidratação. Confirme fórmula, modo de preparo e indicação no rótulo.</p><div class="price">R$ 39,90</div><div class="note">Preço sugerido · confirme estoque e custo</div><a class="btn order" data-product="NEXO Hydration" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
+<article class="card"><img class="product-photo" src="shaker.jpg" alt="Produto NEXO Shaker da NEXO Supplements" loading="lazy"><div class="card-content"><div class="iconbox">▰</div><h3>NEXO Shaker</h3><p class="desc">Coqueteleira esportiva com visual preto e verde neon para acompanhar sua rotina.</p><div class="price">R$ 29,90</div><div class="note">Preço sugerido · confirme estoque e custo</div><a class="btn order" data-product="NEXO Shaker" href="https://wa.me/5511919192074" target="_blank" rel="noopener">Pedir pelo WhatsApp</a></div></article>
 </div></div></section>
 <section class="section" id="beneficios"><div class="container">
 <div class="section-head"><div class="eyebrow">Por que NEXO?</div><h2>Uma experiência simples</h2><p>Identidade marcante, atendimento direto e informações para uma escolha consciente.</p></div>
@@ -70,8 +84,15 @@ footer{border-top:1px solid #00ff6630;padding:26px 0;color:#9ca69e;font-size:12p
 <section class="section dark" id="precos"><div class="container">
 <div class="section-head"><div class="eyebrow">Investimento</div><h2>Preços dos produtos</h2><p>Confirme disponibilidade e condições de entrega antes de concluir o pedido.</p></div>
 <table><thead><tr><th>Produto</th><th>Formato</th><th>Preço</th></tr></thead><tbody>
-<tr><td>Nitro Bifes</td><td>Unidade</td><td>R$ 80,00</td></tr><tr><td>Deep Sleep</td><td>Unidade</td><td>R$ 80,00</td></tr><tr><td>Kit NEXO</td><td>Kit com 2 produtos</td><td>R$ 155,00</td></tr>
-</tbody></table>
+<tr><td>Nitro Bifes</td><td>Unidade</td><td>R$ 80,00</td></tr>
+<tr><td>Deep Sleep</td><td>Unidade</td><td>R$ 80,00</td></tr>
+<tr><td>Kit NEXO</td><td>Kit com 2 produtos</td><td>R$ 155,00</td></tr>
+<tr><td>NEXO Whey Protein</td><td>Unidade</td><td>R$ 99,90*</td></tr>
+<tr><td>NEXO Creatine</td><td>Unidade</td><td>R$ 69,90*</td></tr>
+<tr><td>NEXO Pré-Treino</td><td>Unidade</td><td>R$ 79,90*</td></tr>
+<tr><td>NEXO Hydration</td><td>Unidade</td><td>R$ 39,90*</td></tr>
+<tr><td>NEXO Shaker</td><td>Unidade</td><td>R$ 29,90*</td></tr>
+</tbody></table><p style="font-size:12px;color:#9ca69e;margin-top:12px">*Preços sugeridos para planejamento; confirme custos, estoque, fornecedor e preço final antes de anunciar.</p>
 <div class="details"><div class="detail"><b>Entrega</b><span>Envio para todo o Brasil</span></div><div class="detail"><b>Pagamento</b><span>Pix, dinheiro e cartão</span></div><div class="detail"><b>Localização</b><span>São Paulo, SP</span></div><div class="detail"><b>Instagram</b><span><a href="https://www.instagram.com/nexo.supplements/" target="_blank" rel="noopener">@nexo.supplements ↗</a></span></div></div>
 </div></section>
 <section class="cta" id="contato"><div class="container"><div class="eyebrow">Vamos conversar?</div><h2>Encontre sua conexão com a NEXO.</h2>
